@@ -1,0 +1,98 @@
+{
+  "annotations": {
+    "changelogDate": "20241030091305"
+  },
+  "applications": "*",
+  "documentation": "TransDetails entity.\\n@description - The TransDetails entity holding policy transaction information\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "policyRef",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "30",
+      "fieldValidateRulesMinlength": "6"
+    },
+    {
+      "fieldName": "coverStartDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "coverEndDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "premium",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "payType",
+      "fieldType": "PayType",
+      "fieldTypeDocumentation": "PayType enum.\\n@description - Type of payment\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Mobile,Swipe,Cash,StopOrder"
+    },
+    {
+      "fieldName": "busType",
+      "fieldType": "BusType",
+      "fieldTypeDocumentation": "BusType enum.\\n@description - Type of business transaction\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "NEW,RENEWAL,MTA,MTC"
+    },
+    {
+      "fieldName": "extStatus",
+      "fieldType": "Status",
+      "fieldTypeDocumentation": "Status enum.\\n@description - general status for various entities\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE,FRESH,PENDING,CANCELLED,COMPLETED,DELETED"
+    },
+    {
+      "fieldName": "transStatus",
+      "fieldType": "Status",
+      "fieldTypeDocumentation": "Status enum.\\n@description - general status for various entities\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE,FRESH,PENDING,CANCELLED,COMPLETED,DELETED"
+    },
+    {
+      "fieldName": "syncStatus",
+      "fieldType": "Status",
+      "fieldTypeDocumentation": "Status enum.\\n@description - general status for various entities\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE,FRESH,PENDING,CANCELLED,COMPLETED,DELETED"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "CurType",
+      "fieldTypeDocumentation": "BusType enum.\\n@description - Type of business transaction\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "USD,ZWG,ZAR,GWP"
+    }
+  ],
+  "name": "TransDetails",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "relationshipName": "product",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "client",
+      "relationshipName": "client",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "branch",
+      "relationshipName": "branch",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

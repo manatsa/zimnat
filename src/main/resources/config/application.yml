@@ -16,6 +16,7 @@
 
 ---
 # Conditionally disable springdoc on missing api-docs profile
+
 spring:
   config:
     activate:
@@ -40,7 +41,7 @@ management:
           - loggers
           - prometheus
           - threaddump
-          - liquibase
+  #          - liquibase
   endpoint:
     health:
       show-details: when_authorized

@@ -1,0 +1,216 @@
+//***************************************************************************************************************************************************
+//ENUMS
+
+/**
+ * Status enum.
+ * @description - general status for various entities
+ * @author CodeMaster.
+ */
+enum Status {
+    ACTIVE, FRESH, PENDING, CANCELLED, COMPLETED, DELETED
+}
+
+
+/**
+ * Title enum.
+ * @description - Titles for various people
+ * @author CodeMaster.
+ */
+enum Title {
+    Mr,Mrs, Miss, Ms, Sir, Dr, Prof, Rev, Comm, Lieu, Capt
+}
+
+/**
+ * IDType enum.
+ * @description - Type of ID
+ * @author CodeMaster.
+ */
+enum IDType {
+    NationalID,Passport
+}
+
+/**
+ * PayType enum.
+ * @description - Type of payment
+ * @author CodeMaster.
+ */
+enum PayType {
+    Mobile,Swipe, Cash, StopOrder
+}
+
+/**
+ * BusType enum.
+ * @description - Type of business transaction
+ * @author CodeMaster.
+ */
+enum BusType {
+    NEW,RENEWAL, MTA, MTC
+}
+
+/**
+ * BusType enum.
+ * @description - Type of business transaction
+ * @author CodeMaster.
+ */
+enum CurType {
+    USD, ZWG, ZAR, GWP
+}
+
+
+
+
+
+//***************************************************************************************************************************************************
+//KYC MODULE
+
+
+/**
+ * SBU entity.
+ * @description - the SBU entity for classification of business
+ * @author CodeMaster.
+ */
+entity SBU {
+    name String required  unique minlength(2) maxlength(30)
+    code String required  unique minlength(2) maxlength(12)
+    address String required minlength(6) maxlength(255)
+    status Status required
+}
+
+
+/**
+ * Branch entity.
+ * @description - the branch entity for classification of business
+ * @author CodeMaster.
+ */
+entity Branch {
+    name String required minlength(2) maxlength(30)
+    code String required minlength(2) maxlength(12)
+    address String required minlength(6) maxlength(255)
+    status Status required
+}
+
+
+/**
+ * Address entity.
+ * @description - the address of the customer
+ * @author CodeMaster.
+ */
+entity Address {
+    street String minlength(4) maxlength(255) required
+    location String minlength(2) maxlength(60)
+    city String minlength(2) maxlength(60)
+    country String minlength(2) maxlength(60)
+}
+
+
+
+/**
+ * Client entity.
+ * @description - the entity for capturing client kyc details
+ * @author CodeMaster.
+ */
+entity Client {
+    title  Title required
+    firstName String   required minlength(2) maxlength(60)
+    lastName String    required minlength(2) maxlength(60)
+    idType IDType required
+    idNumber String required minlength(6) maxlength(14)
+    dob LocalDate
+    PhoneNumber String required minlength(9) maxlength(15)
+    status Status required
+}
+
+
+
+//***************************************************************************************************************************************************
+//TRANSACTION MODULE
+
+/**
+ * Product entity.
+ * @description - The Product entity holding product information
+ * @author CodeMaster.
+ */
+entity Product {
+    name String required minlength(2) maxlength(50) unique
+    description String required minlength(10) maxlength(255)
+    code String minlength(2) maxlength(10)
+    riskCode String required
+    screenCode String required
+    dataModelCode String required
+}
+
+/**
+ * TransDetails entity.
+ * @description - The TransDetails entity holding policy transaction information
+ * @author CodeMaster.
+ */
+entity TransDetails {
+    policyRef String minlength(6) maxlength(30)
+    coverStartDate LocalDate required
+    coverEndDate LocalDate required
+    premium BigDecimal required min(0)
+    payType PayType required
+    busType BusType required
+    extStatus Status required
+    transStatus Status required
+    syncStatus Status required
+    currency CurType required
+}
+
+
+
+//***************************************************************************************************************************************************
+//SYSTEM MODULE
+
+/**
+ * Setting entity.
+ * @description - The Setting entity holding system settings information
+ * @author CodeMaster.
+ */
+entity Setting {
+    name String required minlength(2) maxlength(50) unique
+    description String minlength(4) maxlength(255)
+    value String required minlength(2) maxlength(50)
+    effectiveDate LocalDate required
+    lastDate LocalDate
+    adminAccess Boolean
+}
+
+
+//***************************************************************************************************************************************************
+//ENTITY RELATIONSHIPS
+
+//defining May to Many relationships
+/*relationship ManyToMany {
+    Product{ProductBenefit(benefit)} to Benefit
+
+}*/
+
+//defining May to One relationships
+relationship ManyToOne {
+    Client{address} to Address
+    TransDetails{product} to Product
+    TransDetails{client} to Client
+    TransDetails{branch} to Branch
+    Branch{familyCasket} to SBU
+
+}
+
+// defining multiple One To One relationships
+/*relationship OneToOne {
+    ClaimService{claim} to Claim
+    ClaimBurial{claimService} to ClaimService
+}*/
+
+// Set pagination options
+//paginate all entities with infinite-scroll
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl //except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

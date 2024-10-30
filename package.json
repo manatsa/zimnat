@@ -45,6 +45,9 @@
     "default_environment": "prod",
     "packaging": "jar"
   },
+  "dependencies": {
+    "swagger-editor-dist": "^4.13.1"
+  },
   "devDependencies": {
     "generator-jhipster": "8.6.0",
     "husky": "9.0.11",

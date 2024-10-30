@@ -19,7 +19,8 @@ logging:
     tech.jhipster: DEBUG
     org.hibernate.SQL: DEBUG
     org.zimnat: DEBUG
-
+hibernate:
+  dialect: org.hibernate.dialect.SQLServerDialect
 spring:
   devtools:
     restart:
@@ -32,9 +33,9 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:sqlserver://localhost:1433;database=Zimnat;encrypt=false
+    url: jdbc:sqlserver://localhost:1433;database=ZimnatAPI;encrypt=false
     username: SA
-    password: yourStrong(!)Password
+    password: P@8812345!
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -58,6 +59,10 @@ spring:
 
 server:
   port: 8080
+jakarta:
+  persistence:
+    jdbc:
+      url: jdbc:sqlserver://localhost:1433;database=ZimnatAPI;encrypt=false
 
 # ===================================================================
 # JHipster specific properties

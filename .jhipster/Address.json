@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20241030091302"
+  },
+  "applications": "*",
+  "documentation": "Address entity.\\n@description - the address of the customer\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "street",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength", "required"],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "4"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "2"
+    }
+  ],
+  "name": "Address",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

@@ -1,0 +1,74 @@
+{
+  "annotations": {
+    "changelogDate": "20241030091303"
+  },
+  "applications": "*",
+  "documentation": "Client entity.\\n@description - the entity for capturing client kyc details\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "Title",
+      "fieldTypeDocumentation": "Title enum.\\n@description - Titles for various people\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Mr,Mrs,Miss,Ms,Sir,Dr,Prof,Rev,Comm,Lieu,Capt"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "60",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "idType",
+      "fieldType": "IDType",
+      "fieldTypeDocumentation": "IDType enum.\\n@description - Type of ID\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "NationalID,Passport"
+    },
+    {
+      "fieldName": "idNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "14",
+      "fieldValidateRulesMinlength": "6"
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "15",
+      "fieldValidateRulesMinlength": "9"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldTypeDocumentation": "Status enum.\\n@description - general status for various entities\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE,FRESH,PENDING,CANCELLED,COMPLETED,DELETED"
+    }
+  ],
+  "name": "Client",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "address",
+      "relationshipName": "address",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

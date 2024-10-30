@@ -1,0 +1,49 @@
+{
+  "annotations": {
+    "changelogDate": "20241030091301"
+  },
+  "applications": "*",
+  "documentation": "Branch entity.\\n@description - the branch entity for classification of business\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "30",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "12",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "255",
+      "fieldValidateRulesMinlength": "6"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldTypeDocumentation": "Status enum.\\n@description - general status for various entities\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE,FRESH,PENDING,CANCELLED,COMPLETED,DELETED"
+    }
+  ],
+  "name": "Branch",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "sBU",
+      "relationshipName": "familyCasket",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

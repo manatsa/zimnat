@@ -1,0 +1,118 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144357"
+  },
+  "applications": "*",
+  "documentation": "Quotes entity.\\n@description - The Quotes entity holding licence quote response information\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "vRN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licenceID",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "result",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iDNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientIDType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suburbID",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licFrequency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "radioTVUsage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "radioTVFrequency",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxClass",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nettMass",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licExpiryDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transactionAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "arrearsAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "penaltiesAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "administrationAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalLicAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "radioTVAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "radioTVArrearsAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalRadioTVAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Quotes",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

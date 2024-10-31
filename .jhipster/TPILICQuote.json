@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144402"
+  },
+  "applications": "*",
+  "documentation": "TPILICQuote entity.\\n@description - The TPILICQuote entity licence and insurance request parameters\\n@author CodeMaster.",
+  "entityTableName": "tpilic_quote",
+  "fields": [
+    {
+      "fieldName": "partnerReference",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theDate",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theVersion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "partnerToken",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "function",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "TPILICQuote",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

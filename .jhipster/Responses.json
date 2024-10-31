@@ -1,0 +1,22 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144348"
+  },
+  "applications": "*",
+  "documentation": "Response entity.\\n@description - The Response entity holding response information\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "result",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Responses",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

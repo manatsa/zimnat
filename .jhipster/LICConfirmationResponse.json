@@ -1,0 +1,131 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144401"
+  },
+  "applications": "*",
+  "documentation": "LICQuoteUpdate entity.\\n@description - The LICQuoteUpdate entity holding licence confirmation response information inside of LICResultResponse\\n@author CodeMaster.",
+  "entityTableName": "lic_confirmation_response",
+  "fields": [
+    {
+      "fieldName": "result",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licenceID",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "receiptID",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vRN",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "loadedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "loadedDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "approvedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "approvedDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iDNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "suburbID",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transactionAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "arrearsAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "penaltiesAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "administrationAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalLicAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "radioTVAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "radioTVArrearsAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalRadioTVAmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxClass",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nettMass",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "licExpiryDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "radioTVExpiryDate",
+      "fieldType": "String"
+    }
+  ],
+  "name": "LICConfirmationResponse",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

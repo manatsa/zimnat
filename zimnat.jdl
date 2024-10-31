@@ -56,7 +56,31 @@ enum CurType {
     USD, ZWG, ZAR, GWP
 }
 
+/**
+ * LICQuoteStatus enum.
+ * @description - The licence quote approval status
+ * @author CodeMaster.
+ */
+enum LICQuoteStatus {
+    Approved, Rejected
+}
 
+
+/**
+ * DeliveryMethod enum.
+ * @description - The delivery method for licence disk
+ * @author CodeMaster.
+ */
+enum DeliveryMethod {
+    Cash
+    ICEcash
+    EcoCash
+    Airtime
+    Netone
+    Telecel
+    MasterorVisa
+    Zimswitch
+}
 
 
 
@@ -177,6 +201,239 @@ entity Setting {
 }
 
 
+
+//***************************************************************************************************************************************************
+//ICECASH COMMUNICATION MODULE
+
+/**
+ * Response entity.
+ * @description - The Response entity holding response information
+ * @author CodeMaster.
+ */
+entity Responses {
+    Result String
+    Message String
+}
+
+/**
+ * QuoteResponse entity.
+ * @description - The QuoteResponse entity holding licence Quote response information
+ * @author CodeMaster.
+ */
+entity QuoteResponse {
+    Result String
+    Message String
+}
+
+
+
+/**
+ * FailureResponse entity.
+ * @description - The Request entity holding request failure response information
+ * @author CodeMaster.
+ */
+entity FailureResponse {
+    PartnerReference String
+    Date String
+    Version String
+}
+
+/**
+ * BatchStatusRequest entity.
+ * @description - The Request entity holding Batch Status request information
+ * @author CodeMaster.
+ */
+entity BatchStatusRequest {
+    theFunction String required
+    insuranceIDBatch String required
+
+}
+
+/**
+ * LICQuoteRequest entity.
+ * @description - The LICQuoteRequest entity holding LICQuote request information
+ * @author CodeMaster.
+ */
+entity LICQuoteRequest {
+    theFunction String required
+}
+
+/**
+ * Vehicle entity.
+ * @description - The Vehicle entity holding vehicle information
+ * @author CodeMaster.
+ */
+entity Vehicle {
+    VRN String required
+    IDNumber String required
+    }
+
+/**
+ * BatchStatus entity.
+ * @description - The BatchStatus entity holding batch status request parameters
+ * @author CodeMaster.
+ */
+entity BatchStatus {
+
+    PartnerReference String required
+    theDate String required
+    theVersion String required
+    partnerToken String required
+    }
+
+/**
+ * LICQuote entity.
+ * @description - The LICQuote entity holding Licence quote request parameters
+ * @author CodeMaster.
+ */
+entity LICQuote{
+    partnerReference String required
+    theDate String required
+    theVersion String required
+    partnerToken String required
+}
+
+/**
+ * LICQuoteResponse entity.
+ * @description - The LICQuoteResponse entity holding Licence quote response information
+ * @author CodeMaster.
+ */
+entity LICQuoteResponse{
+    partnerReference String
+    theDate String
+    theVersion String
+}
+
+/**
+ * Quotes entity.
+ * @description - The Quotes entity holding licence quote response information
+ * @author CodeMaster.
+ */
+entity Quotes {
+    VRN String
+    LicenceID String,
+    Result Integer
+    Message String
+    IDNumber String
+    ClientIDType String
+    FirstName String
+    LastName String
+    Address1 String
+    Address2 String
+    SuburbID String
+    LicFrequency String
+    RadioTVUsage String
+    RadioTVFrequency String
+    TaxClass String
+    NettMass String
+    LicExpiryDate String
+    TransactionAmt String
+    ArrearsAmt String
+    PenaltiesAmt String,
+    AdministrationAmt String
+    TotalLicAmt String
+    RadioTVAmt String
+    RadioTVArrearsAmt String
+    TotalRadioTVAmt String
+    TotalAmount String
+    }
+
+
+/**
+ * LICQuoteUpdate entity.
+ * @description - The LICQuoteUpdate entity holding licence quote update (approve or reject) request parameters
+ * @author CodeMaster.
+ */
+entity LICQuoteUpdate {
+
+    PartnerReference String required
+    theDate String required
+    theVersion String required
+    partnerToken String required
+    LicenceID String required
+    Status Boolean required
+    PaymentMethod PayType required
+    DeliveryMethod DeliveryMethod required
+}
+
+
+/**
+ * LICResult entity.
+ * @description - The LICResult entity licence confirmation request parameters
+ * @author CodeMaster.
+ */
+entity LICResult {
+    PartnerReference String required
+    theDate String required
+    theVersion String required
+    partnerToken String required
+    LicenceID String required
+    Function String required
+}
+
+/**
+ * LICResultResponse entity.
+ * @description - The LICResultResponse entity holding licence confirmation response information
+ * @author CodeMaster.
+ */
+entity LICResultResponse {
+    PartnerReference String
+    theDate String
+    Version String
+
+}
+
+/**
+ * LICQuoteUpdate entity.
+ * @description - The LICQuoteUpdate entity holding licence confirmation response information inside of LICResultResponse
+ * @author CodeMaster.
+ */
+entity LICConfirmationResponse {
+    Result String
+    Message String
+    LicenceID String
+    ReceiptID String
+    VRN String
+    Status String
+    LoadedBy String
+    LoadedDate String
+    ApprovedBy String
+    ApprovedDate String
+    IDNumber String
+    FirstName String
+    LastName String
+    Address1 String
+    Address2 String
+    SuburbID String
+    TransactionAmt String
+    ArrearsAmt String
+    PenaltiesAmt String
+    AdministrationAmt String
+    TotalLicAmt String
+    RadioTVAmt String
+    RadioTVArrearsAmt String
+    TotalRadioTVAmt String
+    TotalAmount String
+    TaxClass String
+    NettMass String
+    LicExpiryDate String
+    RadioTVExpiryDate String
+}
+
+
+/**
+ * TPILICQuote entity.
+ * @description - The TPILICQuote entity licence and insurance request parameters
+ * @author CodeMaster.
+ */
+entity TPILICQuote {
+    PartnerReference UUID required
+    theDate String required
+    theVersion String required
+    partnerToken String required
+    Function String required
+}
+
 //***************************************************************************************************************************************************
 //ENTITY RELATIONSHIPS
 
@@ -193,14 +450,20 @@ relationship ManyToOne {
     TransDetails{client} to Client
     TransDetails{branch} to Branch
     Branch{familyCasket} to SBU
+    LICQuoteRequest{Vehicles} to Vehicle
+    QuoteResponse{Quotes} to Quotes
 
 }
 
+
 // defining multiple One To One relationships
-/*relationship OneToOne {
-    ClaimService{claim} to Claim
-    ClaimBurial{claimService} to ClaimService
-}*/
+relationship OneToOne {
+    BatchStatus{Request} to BatchStatusRequest
+    LICQuote{Request} to LICQuoteRequest
+    FailureResponse{Response} to Responses
+    LICQuoteResponse{Response} to QuoteResponse
+    LICResultResponse{Response} to LICConfirmationResponse
+}
 
 // Set pagination options
 //paginate all entities with infinite-scroll

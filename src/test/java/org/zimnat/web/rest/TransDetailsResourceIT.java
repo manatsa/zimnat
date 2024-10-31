@@ -489,11 +489,7 @@ class TransDetailsResourceIT {
         TransDetails partialUpdatedTransDetails = new TransDetails();
         partialUpdatedTransDetails.setId(transDetails.getId());
 
-        partialUpdatedTransDetails
-            .policyRef(UPDATED_POLICY_REF)
-            .coverStartDate(UPDATED_COVER_START_DATE)
-            .premium(UPDATED_PREMIUM)
-            .transStatus(UPDATED_TRANS_STATUS);
+        partialUpdatedTransDetails.coverEndDate(UPDATED_COVER_END_DATE).payType(UPDATED_PAY_TYPE).busType(UPDATED_BUS_TYPE);
 
         restTransDetailsMockMvc
             .perform(

@@ -1,0 +1,41 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144354"
+  },
+  "applications": "*",
+  "documentation": "BatchStatus entity.\\n@description - The BatchStatus entity holding batch status request parameters\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "partnerReference",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theDate",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theVersion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "partnerToken",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "BatchStatus",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "batchStatusRequest",
+      "relationshipName": "request",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

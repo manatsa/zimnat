@@ -1,0 +1,45 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144359"
+  },
+  "applications": "*",
+  "documentation": "LICResult entity.\\n@description - The LICResult entity licence confirmation request parameters\\n@author CodeMaster.",
+  "entityTableName": "lic_result",
+  "fields": [
+    {
+      "fieldName": "partnerReference",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theDate",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theVersion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "partnerToken",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "licenceID",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "function",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "LICResult",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

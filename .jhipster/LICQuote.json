@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144355"
+  },
+  "applications": "*",
+  "documentation": "LICQuote entity.\\n@description - The LICQuote entity holding Licence quote request parameters\\n@author CodeMaster.",
+  "entityTableName": "lic_quote",
+  "fields": [
+    {
+      "fieldName": "partnerReference",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theDate",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theVersion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "partnerToken",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "LICQuote",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "lICQuoteRequest",
+      "relationshipName": "request",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

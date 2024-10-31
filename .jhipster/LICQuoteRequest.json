@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144352"
+  },
+  "applications": "*",
+  "documentation": "LICQuoteRequest entity.\\n@description - The LICQuoteRequest entity holding LICQuote request information\\n@author CodeMaster.",
+  "entityTableName": "lic_quote_request",
+  "fields": [
+    {
+      "fieldName": "theFunction",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "LICQuoteRequest",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "vehicle",
+      "relationshipName": "vehicles",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

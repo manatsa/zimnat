@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144349"
+  },
+  "applications": "*",
+  "documentation": "QuoteResponse entity.\\n@description - The QuoteResponse entity holding licence Quote response information\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "result",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    }
+  ],
+  "name": "QuoteResponse",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "quotes",
+      "relationshipName": "quotes",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

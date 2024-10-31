@@ -18,10 +18,32 @@
     <include file="config/liquibase/changelog/20241030091304_added_entity_Product.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20241030091305_added_entity_TransDetails.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20241030091306_added_entity_Setting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144348_added_entity_Responses.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144349_added_entity_QuoteResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144350_added_entity_FailureResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144351_added_entity_BatchStatusRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144352_added_entity_LICQuoteRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144353_added_entity_Vehicle.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144354_added_entity_BatchStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144355_added_entity_LICQuote.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144356_added_entity_LICQuoteResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144357_added_entity_Quotes.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144358_added_entity_LICQuoteUpdate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144359_added_entity_LICResult.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144400_added_entity_LICResultResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144401_added_entity_LICConfirmationResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144402_added_entity_TPILICQuote.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20241030091301_added_entity_constraints_Branch.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20241030091303_added_entity_constraints_Client.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20241030091305_added_entity_constraints_TransDetails.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144349_added_entity_constraints_QuoteResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144350_added_entity_constraints_FailureResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144352_added_entity_constraints_LICQuoteRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144354_added_entity_constraints_BatchStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144355_added_entity_constraints_LICQuote.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144356_added_entity_constraints_LICQuoteResponse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241031144400_added_entity_constraints_LICResultResponse.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

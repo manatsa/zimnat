@@ -336,7 +336,7 @@ class BranchResourceIT {
         Branch partialUpdatedBranch = new Branch();
         partialUpdatedBranch.setId(branch.getId());
 
-        partialUpdatedBranch.name(UPDATED_NAME).status(UPDATED_STATUS);
+        partialUpdatedBranch.address(UPDATED_ADDRESS);
 
         restBranchMockMvc
             .perform(

@@ -379,11 +379,7 @@ class ProductResourceIT {
         Product partialUpdatedProduct = new Product();
         partialUpdatedProduct.setId(product.getId());
 
-        partialUpdatedProduct
-            .name(UPDATED_NAME)
-            .description(UPDATED_DESCRIPTION)
-            .riskCode(UPDATED_RISK_CODE)
-            .dataModelCode(UPDATED_DATA_MODEL_CODE);
+        partialUpdatedProduct.code(UPDATED_CODE);
 
         restProductMockMvc
             .perform(

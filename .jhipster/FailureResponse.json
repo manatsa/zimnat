@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144350"
+  },
+  "applications": "*",
+  "documentation": "FailureResponse entity.\\n@description - The Request entity holding request failure response information\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "partnerReference",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "version",
+      "fieldType": "String"
+    }
+  ],
+  "name": "FailureResponse",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "responses",
+      "relationshipName": "response",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

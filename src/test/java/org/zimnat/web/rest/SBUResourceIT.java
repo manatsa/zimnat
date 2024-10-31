@@ -334,7 +334,7 @@ class SBUResourceIT {
         SBU partialUpdatedSBU = new SBU();
         partialUpdatedSBU.setId(sBU.getId());
 
-        partialUpdatedSBU.status(UPDATED_STATUS);
+        partialUpdatedSBU.code(UPDATED_CODE).address(UPDATED_ADDRESS);
 
         restSBUMockMvc
             .perform(

@@ -350,8 +350,8 @@ class SettingResourceIT {
         partialUpdatedSetting.setId(setting.getId());
 
         partialUpdatedSetting
-            .name(UPDATED_NAME)
             .description(UPDATED_DESCRIPTION)
+            .value(UPDATED_VALUE)
             .effectiveDate(UPDATED_EFFECTIVE_DATE)
             .lastDate(UPDATED_LAST_DATE);
 

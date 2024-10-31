@@ -432,7 +432,7 @@ class ClientResourceIT {
         Client partialUpdatedClient = new Client();
         partialUpdatedClient.setId(client.getId());
 
-        partialUpdatedClient.lastName(UPDATED_LAST_NAME).dob(UPDATED_DOB).phoneNumber(UPDATED_PHONE_NUMBER).status(UPDATED_STATUS);
+        partialUpdatedClient.firstName(UPDATED_FIRST_NAME).lastName(UPDATED_LAST_NAME).dob(UPDATED_DOB).phoneNumber(UPDATED_PHONE_NUMBER);
 
         restClientMockMvc
             .perform(

@@ -1,0 +1,24 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144353"
+  },
+  "applications": "*",
+  "documentation": "Vehicle entity.\\n@description - The Vehicle entity holding vehicle information\\n@author CodeMaster.",
+  "fields": [
+    {
+      "fieldName": "vRN",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "iDNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Vehicle",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

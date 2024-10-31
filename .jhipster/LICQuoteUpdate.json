@@ -1,0 +1,59 @@
+{
+  "annotations": {
+    "changelogDate": "20241031144358"
+  },
+  "applications": "*",
+  "documentation": "LICQuoteUpdate entity.\\n@description - The LICQuoteUpdate entity holding licence quote update (approve or reject) request parameters\\n@author CodeMaster.",
+  "entityTableName": "lic_quote_update",
+  "fields": [
+    {
+      "fieldName": "partnerReference",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theDate",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "theVersion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "partnerToken",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "licenceID",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentMethod",
+      "fieldType": "PayType",
+      "fieldTypeDocumentation": "PayType enum.\\n@description - Type of payment\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Mobile,Swipe,Cash,StopOrder"
+    },
+    {
+      "fieldName": "deliveryMethod",
+      "fieldType": "DeliveryMethod",
+      "fieldTypeDocumentation": "DeliveryMethod enum.\\n@description - The delivery method for licence disk\\n@author CodeMaster.",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "Cash,ICEcash,EcoCash,Airtime,Netone,Telecel,MasterorVisa,Zimswitch"
+    }
+  ],
+  "name": "LICQuoteUpdate",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

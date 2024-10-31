@@ -287,7 +287,7 @@ class AddressResourceIT {
         Address partialUpdatedAddress = new Address();
         partialUpdatedAddress.setId(address.getId());
 
-        partialUpdatedAddress.street(UPDATED_STREET).location(UPDATED_LOCATION).city(UPDATED_CITY).country(UPDATED_COUNTRY);
+        partialUpdatedAddress.street(UPDATED_STREET);
 
         restAddressMockMvc
             .perform(
